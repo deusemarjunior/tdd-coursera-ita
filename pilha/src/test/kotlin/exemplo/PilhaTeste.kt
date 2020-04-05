@@ -3,6 +3,7 @@ package exemplo
 import org.junit.Assert
 import org.junit.Test
 import kotlin.test.assertFalse
+import kotlin.test.fail
 
 class PilhaTeste {
 
@@ -37,11 +38,15 @@ class PilhaTeste {
         pilha.desempilha()
     }
 
-    @Test(expected = PilhaException::class)
+    @Test
     fun adicionarPilhaCheia(){
         for(i in 1..10){
             pilha.empilha("elemento "+ i)
         }
-        pilha.empilha("boom")
+
+        var result = try {
+            pilha.empilha("boom")
+            fail()
+        }catch (e: PilhaException){ }
     }
 }
