@@ -4,11 +4,11 @@ import java.util.*
 
 class Pilha {
 
-    private var elemento: String? = null
-    private var quantidade: Int = 0
+    var elementos = Array(10){ String()}
+    var quantidade: Int = 0
 
     fun estaVazia(): Boolean {
-        return (elemento == null);
+        return quantidade == 0;
     }
 
     fun tamanho(): Int {
@@ -16,12 +16,18 @@ class Pilha {
     }
 
     fun empilha(elemento: String) {
-        this.elemento = elemento
+        this.elementos[quantidade] = elemento
         quantidade++
     }
 
-    fun topo(): String? {
-        return elemento
+    fun topo(): String {
+        return elementos[quantidade-1]
+    }
+
+    fun desempilha(): String {
+        var topo:String = topo()
+        quantidade--
+        return topo
     }
 
 }
