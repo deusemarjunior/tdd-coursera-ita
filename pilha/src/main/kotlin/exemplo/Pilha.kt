@@ -1,11 +1,14 @@
 package exemplo
 
-import java.util.*
+class Pilha (maximo:Int) {
 
-class Pilha {
-
-    var elementos = Array(10){ String()}
+    val elementos: Array<String>
     var quantidade: Int = 0
+
+
+    init{
+        elementos = Array(maximo){String()}
+    }
 
     fun estaVazia(): Boolean {
         return quantidade == 0;
@@ -16,6 +19,8 @@ class Pilha {
     }
 
     fun empilha(elemento: String) {
+        if(quantidade == elementos.size)
+            throw PilhaException("Pilha Cheia! Não é possível adicionar mais elementos")
         this.elementos[quantidade] = elemento
         quantidade++
     }
@@ -25,6 +30,8 @@ class Pilha {
     }
 
     fun desempilha(): String {
+        if(estaVazia())
+             throw  PilhaException("Pilha Vazia! Não é possível remover elementos")
         var topo:String = topo()
         quantidade--
         return topo
