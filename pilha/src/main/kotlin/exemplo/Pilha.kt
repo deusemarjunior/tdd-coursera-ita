@@ -3,11 +3,11 @@ package exemplo
 class Pilha {
 
     fun estaVazia(): Boolean {
-        return false
+        return true
     }
 
     fun tamanho(): Long {
-        return 1
+        return 0
     }
 
 }
