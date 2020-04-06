@@ -39,4 +39,12 @@ class TradutorTeste {
         t.adiconaTraducao("bom","nice")
         assertEquals("good, nice",t.traduzir("bom"))
     }
+
+    @Test
+    fun  traduzirFrase(){
+        t.adiconaTraducao("guerra","war")
+        t.adiconaTraducao("é","is")
+        t.adiconaTraducao("ruim","bad")
+        assertEquals("war is bad",t.traduzirFrase("guerra é ruim"))
+    }
 }

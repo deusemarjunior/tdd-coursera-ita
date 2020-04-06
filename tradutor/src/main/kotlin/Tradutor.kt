@@ -17,4 +17,14 @@ class Tradutor {
     fun traduzir(palavra: String): String? {
         return  traducoes.get(palavra)
     }
+
+    fun traduzirFrase(frase: String): String {
+        var palavras = frase.split(" ")
+        var fraseTraduzida = ""
+        for(palavra :String in palavras){
+            var traducao = traduzir(palavra)
+            fraseTraduzida += " " + traducao
+        }
+        return fraseTraduzida.trim()
+    }
 }
