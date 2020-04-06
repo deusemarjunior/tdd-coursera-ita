@@ -1,17 +1,16 @@
 class Tradutor {
 
-    private var traducao: String? = null;
+    var traducao = HashMap<String,String>()
 
     fun estaVazio(): Boolean {
-        return (traducao == null)
+        return traducao.isEmpty()
     }
 
-    fun adiconaTraducao(palavra: String, traducao: String) {
-        this.traducao = traducao
+    fun adiconaTraducao(palavra: String, palavraTraduzida: String) {
+        traducao[palavra]= palavraTraduzida
     }
 
     fun traduzir(palavra: String): String? {
-        return  this.traducao
+        return  traducao.get(palavra)
     }
-
 }

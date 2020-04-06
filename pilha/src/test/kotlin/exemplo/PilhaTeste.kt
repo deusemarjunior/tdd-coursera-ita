@@ -1,13 +1,18 @@
 package exemplo
 
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.fail
 
 class PilhaTeste {
 
-     private var pilha: Pilha = Pilha(10)
+     lateinit var pilha: Pilha
+
+    @Before fun criarPilha(){
+        pilha = Pilha(10)
+    }
 
     @Test
     fun pilhaVazia(){
