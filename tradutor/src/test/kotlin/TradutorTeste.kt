@@ -32,4 +32,11 @@ class TradutorTeste {
         assertEquals("good",t.traduzir("bom"))
         assertEquals("bad",t.traduzir("mau"))
     }
+
+    @Test
+    fun  duasTraducoesMesmaPalavra(){
+        t.adiconaTraducao("bom","good")
+        t.adiconaTraducao("bom","nice")
+        assertEquals("good, nice",t.traduzir("bom"))
+    }
 }
