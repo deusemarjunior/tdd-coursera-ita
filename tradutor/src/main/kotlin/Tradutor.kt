@@ -6,7 +6,7 @@ class Tradutor {
         return (traducao == null)
     }
 
-    fun adiconaPalavra(palavra: String, traducao: String) {
+    fun adiconaTraducao(palavra: String, traducao: String) {
         this.traducao = traducao
     }
 

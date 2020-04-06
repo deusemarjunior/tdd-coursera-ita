@@ -14,7 +14,7 @@ class TradutorTeste {
     @Test
     fun  umaTraducao(){
         var t = Tradutor()
-        t.adiconaPalavra("bom","good")
+        t.adiconaTraducao("bom","good")
         assertFalse (t.estaVazio())
         assertEquals("good",t.traduzir("bom"))
     }
