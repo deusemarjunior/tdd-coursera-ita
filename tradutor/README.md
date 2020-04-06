@@ -21,3 +21,7 @@ Duas traduções, mesma palavra
 ## Cenário de Teste / Requisito 5
 
 Traduzir frase
+
+## Cenário de Teste / Requisito 6
+
+Traduzir frase com duas traduções para mesma palavra

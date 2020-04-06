@@ -23,8 +23,16 @@ class Tradutor {
         var fraseTraduzida = ""
         for(palavra :String in palavras){
             var traducao = traduzir(palavra)
+            traducao = primeiraTraducao(traducao)
             fraseTraduzida += " " + traducao
         }
         return fraseTraduzida.trim()
+    }
+
+    private fun primeiraTraducao(traducaoParam: String?): String? {
+        var traducao = traducaoParam
+        if (traducao != null && traducao.contains(","))
+            traducao = traducao.substring(0, traducao.indexOf(","))
+        return traducao
     }
 }

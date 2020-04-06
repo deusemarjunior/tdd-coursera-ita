@@ -47,4 +47,14 @@ class TradutorTeste {
         t.adiconaTraducao("ruim","bad")
         assertEquals("war is bad",t.traduzirFrase("guerra é ruim"))
     }
+
+    @Test
+    fun  traduzirFraseComDuasTraducoesMesmaPalavra(){
+        t.adiconaTraducao("paz","peace")
+        t.adiconaTraducao("é","is")
+        t.adiconaTraducao("bom","good")
+        t.adiconaTraducao("bom","nice")
+        assertEquals("peace is good",t.traduzirFrase("paz é bom"))
+    }
+
 }
